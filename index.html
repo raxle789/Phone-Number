@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Program Pembuatan Nomor Telepon</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center">Phone Number</h1>
+    </header>
+    <br>
+    <div>
+      <label for="select1">Pilih Jenis Nomor Telepon: </label> <br />
+      <select id="select1">
+        <option value="Indonesia">Nomor Telepon Indonesia</option>
+        <option value="Malaysia">Nomor Telepon Malaysia</option>
+        <option value="Singapura">Nomor Telepon Singapura</option>
+      </select> <br /> <br />
+      <label for="select2">Pilih Jumlah:</label> <br />
+      <select id="select2">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select> <br /> <br />
+      <button type="button" onclick="tampilkanhasil()">Enter</button>
+      <br /> <br />
+      <p id="tulisanhasil"></p>
+      <p id="tulisan1"></p>
+      <p id="tulisan2"></p>
+      <p id="tulisan3"></p>
+    </div>
+    <script>
+    function tampilkanhasil(){
+      var masukan = document.getElementById("select2").value;
+      var pilihan = document.getElementById("select1").value;
+      var nomorIndo = "+62 8";
+      var nomorSng = "+65 8";
+      var nomorMly = "+60 8";
+      var nomor2;
+      var nomor3;
+      var nomorJadi;
+      var arrayNomor1 = [];
+      var arrayNomor2 = [];
+      var arrayNomor3 = [];
+
+      switch(masukan){
+        case "2":
+          if (pilihan==="Indonesia"){
+            nomor2 = "+62 8";
+          } else if (pilihan==="Singapura"){
+            nomor2 = "+65 8";
+          } else {
+            nomor2 = "+60 8";
+          }
+          break;
+        case "3":
+          if (pilihan==="Indonesia"){
+            nomor2 = "+62 8";
+            nomor3 = "+62 8";
+          } else if (pilihan==="Singapura"){
+            nomor2 = "+65 8";
+            nomor3 = "+65 8";
+          } else {
+            nomor2 = "+60 8";
+            nomor3 = "+60 8";
+          }
+      }
+
+      var fungsi = (array1, array2, array3) => {
+        array1.push(Math.ceil(Math.random() * 9));
+        array2.push(Math.ceil(Math.random() * 9));
+        array3.push(Math.ceil(Math.random() * 9));
+      }
+
+      fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+      fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+      fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+      fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+      fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+      fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+      if (pilihan === "Indonesia"){
+        fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+        fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+        fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+        fungsi(arrayNomor1, arrayNomor2, arrayNomor3);
+      }
+
+      if (pilihan==="Indonesia"){
+        nomorJadi = nomorIndo + arrayNomor1.join('');
+        nomor2 = nomor2 + arrayNomor2.join('');
+        nomor3 = nomor3 + arrayNomor3.join('');
+      } else if (pilihan==="Singapura"){
+        nomorJadi = nomorSng + arrayNomor1.join('');
+        nomor2 = nomor2 + arrayNomor2.join('');
+        nomor3 = nomor3 + arrayNomor3.join('');
+      } else {
+        nomorJadi = nomorMly + arrayNomor1.join('');
+        nomor2 = nomor2 + arrayNomor2.join('');
+        nomor3 = nomor3 + arrayNomor3.join('');
+      }
+
+      switch(masukan){
+        case "1":
+          document.getElementById("tulisanhasil").innerHTML = "Hasil:";
+          document.getElementById("tulisan1").innerHTML = nomorJadi;
+          document.getElementById("tulisan2").innerHTML = "";
+          document.getElementById("tulisan3").innerHTML = "";
+          break;
+        case "2":
+          document.getElementById("tulisanhasil").innerHTML = "Hasil:";
+          document.getElementById("tulisan1").innerHTML = nomorJadi;
+          document.getElementById("tulisan2").innerHTML = nomor2;
+          document.getElementById("tulisan3").innerHTML = "";
+          break;
+        default:
+          document.getElementById("tulisanhasil").innerHTML = "Hasil:";
+          document.getElementById("tulisan1").innerHTML = nomorJadi;
+          document.getElementById("tulisan2").innerHTML = nomor2;
+          document.getElementById("tulisan3").innerHTML = nomor3;
+      }
+    }
+    </script>
+  </body>
+</html>

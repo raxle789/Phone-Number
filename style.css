@@ -1,0 +1,67 @@
+@font-face{
+  src: url(SourceSansPro-Black.ttf);
+  font-family: SourceSans;
+}
+@font-face{
+  src: url(Roboto-MediumItalic.ttf);
+  font-family: rob;
+}
+@font-face {
+  src: url(BeVietnamPro-Medium.ttf);
+  font-family: be;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  font-family: be;
+}
+header{
+  background-image: radial-gradient( circle 321px at 8.3% 75.7%,  rgba(209,247,241,1) 0%, rgba(249,213,213,1) 81% );
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-family: SourceSans;
+  font-size: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+div{
+  margin-left: 20px;
+  border-radius: 20px;
+}
+select{
+  font-family: rob;
+}
+button{
+  font-family: rob;
+}
+@media screen and (max-width: 650px) {
+  h1{
+    font-size: 25px;
+  }
+  header{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  div{
+    margin-left: 15px;
+  }
+  label{
+    font-size: 12px;
+  }
+  option{
+    font-size: 12px;
+  }
+  select{
+    font-size: 12px;
+  }
+  button{
+    font-size: 12px;
+  }
+  p{
+    font-size: 12px;
+  }
+}
